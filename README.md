@@ -1,26 +1,42 @@
-# MyHammer
+# Job Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Angular based jobs dashboard. Features 2 views and a dialog.
+Project has the readiness to support REST Apis and GraphQL queries both.
+By default it runs ont the REST Apis.
 
-## Development server
+### Dashboard
+
+Lists down all the added jobs in a tabular layout.
+
+### Add Job
+
+Dialog to add new jobs. Has form validations and HTTP operation to save the added job
+
+### Details
+
+Lists down all the details of a job.
+
+## Running project
+
+Run the command `npm install` to install all the dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Project has unit test supported by `Jest`.
+
+To run the unit tests run the command `npm run test`
+
+To check the test coverage run the command `jest --coverage`
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+E2E testing is on Cypress.
+
+To run the e2e tests, run the command `npm run e2e`.
+
+Additionally, to run the tests in a browser, run the command `cypress run --browser chrome`
 
 ## Further help
 
