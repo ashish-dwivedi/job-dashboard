@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>Jobs List</h1>
+  <button mat-stroked-button data-cy="add" (click)="onAddJobClick()">
+    <mat-icon>add</mat-icon>
+    Add Job
+  </button>
+</div>
+<div class="page-content">
+  <app-dashboard-list
+    *ngIf="jobList?.length; else elseBlock"
+    [jobList]="jobList"
+    (rowClicked)="onJobItemClick($event)"
+  ></app-dashboard-list>
+  <ng-template #elseBlock>
+    <h3>No jobs added yet!</h3>
+  </ng-template>
+</div>

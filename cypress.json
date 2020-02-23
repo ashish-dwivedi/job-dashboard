@@ -1,0 +1,7 @@
+{
+  "supportFile": "cypress/support/index.js",
+  "browser": {
+    "name": "chrome",
+    "isHeader": true
+  }
+}

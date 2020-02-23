@@ -1,0 +1,23 @@
+@import '../styles/variables';
+
+mat-toolbar {
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  position: sticky;
+  box-shadow: 0 0 10px $shadow;
+  background: linear-gradient(180deg, $white 0, $white 50%, hsla(0, 0%, 100%, 0.8));
+
+  img {
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.content-container {
+  top: 100px;
+  width: 80vw;
+  padding: 1rem;
+  margin: 0 10vw;
+  height: calc(100% - 60px - 32px);
+}

@@ -1,0 +1,62 @@
+<div class="page-header">
+  <h1 data-cy="page-header">
+    <button data-cy="back" mat-icon-button [routerLink]="['/dashboard']">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    Job Details
+  </h1>
+</div>
+<div class="page-content">
+  <div class="page-subsection">
+    <h3 class="d-flex">
+      <mat-icon>info</mat-icon>
+      Info
+    </h3>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Job Description" formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker" placeholder="Date" formControlName="date" />
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+    </form>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="page-subsection">
+    <h3 class="d-flex">
+      <mat-icon>attachments</mat-icon>
+      Attachments
+    </h3>
+    <mat-list role="list">
+      <mat-list-item class="cr-pointer" role="listitem" *ngFor="let attachment of job?.attachments">
+        <mat-icon class="material-icons-outlined">insert_drive_file</mat-icon>
+        {{ attachment?.name }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="page-subsection">
+    <h3 class="d-flex">
+      <mat-icon>face</mat-icon>
+      Assignee
+    </h3>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="user-avatar material-icons-outlined"
+          >account_circle</mat-icon
+        >
+        <mat-card-title>{{ job?.assignee?.name }}</mat-card-title>
+        <mat-card-subtitle>{{ job?.assignee?.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <label>Role</label>
+        <span>{{ job?.assignee?.role }}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

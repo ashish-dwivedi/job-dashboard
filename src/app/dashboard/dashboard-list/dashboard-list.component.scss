@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $grey;
+  }
+}

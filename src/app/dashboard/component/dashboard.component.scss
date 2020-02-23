@@ -1,0 +1,11 @@
+@import './src/styles/variables';
+
+h1 {
+  color: $primary;
+}
+
+::ng-deep {
+  .mat-tab-labels {
+    justify-content: space-around;
+  }
+}

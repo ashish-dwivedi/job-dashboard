@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h2 data-cy="dialog-header">
+    Add Job
+  </h2>
+  <mat-icon class="cr-pointer" data-cy="dialog-close" (click)="onCloseDialogClick()"
+    >close</mat-icon
+  >
+</div>
+<div class="page-content">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input matInput data-cy="title-input" placeholder="Title*" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        data-cy="description-input"
+        placeholder="Description*"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="myDatepicker"
+        placeholder="Date of reporting*"
+        formControlName="date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field data-cy="user-select">
+      <mat-select placeholder="Assignee" formControlName="assignee">
+        <mat-option *ngFor="let user of users | async" [value]="user">
+          {{ user?.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <div class="action-container">
+    <button
+      mat-stroked-button
+      data-cy="dialog-submit"
+      [disabled]="form?.pristine || form?.invalid"
+      (click)="onSaveJobClick()"
+    >
+      <mat-icon class="material-icons-outlined">save</mat-icon>
+      Save
+    </button>
+  </div>
+</div>
