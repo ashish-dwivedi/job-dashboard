@@ -32,11 +32,11 @@ describe('JobService', () => {
         assignee: { name: 'Jimmy K', email: 'jimmy-k@myhammer.de', role: 'Case Manager', avatar: 'image1.jpg' },
       },
     ];
+    service.getAllJobs().subscribe(res => {
+      expect(res).toBe(response);
+    });
     const request = httpMock.expectOne(`${environment.baseApiUrl}/job/all`);
     expect(request.request.method).toBe('GET');
-    service.getAllJobs().subscribe(res => {
-      expect(res).toBe(request);
-    });
     request.flush(response);
     httpMock.verify();
   });

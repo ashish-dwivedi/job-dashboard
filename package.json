@@ -9,7 +9,7 @@
     "test:watch": "jest --watch",
     "lint": "ng lint",
     "format:fix": "pretty-quick --staged",
-    "e2e": "cypress run --browser chrome"
+    "e2e": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -69,7 +69,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format:fix && npm run lint && npm run test"
+      "pre-commit": "npm run format:fix && npm run lint && npm run test && npm e2e"
     }
   },
   "jest": {
